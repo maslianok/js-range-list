@@ -59,8 +59,6 @@ class RangeList {
   }
 }
 
-if (typeof window !== 'undefined') {
-  window.RangeList = RangeList;
-}
+global.RangeList = RangeList;
 
 export default RangeList;
