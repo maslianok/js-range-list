@@ -1,6 +1,6 @@
-import { RangeList, RangeListBitSetWithoutArray } from 'js-range-list';
+import { RangeList, RangeListBitSetWithoutArray, RangeListPure } from 'js-range-list';
 
-const rl = new RangeListBitSetWithoutArray();
+const rl = new RangeListPure();
 
 rl.add([1, 5]);
 rl.print();
