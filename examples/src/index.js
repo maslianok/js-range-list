@@ -1,43 +1,47 @@
 import { RangeList, RangeListBitSetWithoutArray, RangeListPure } from 'js-range-list';
 
-const rl = new RangeListPure();
+function executeTest(list) {
+  list.add([1, 5]);
+  list.print();
+  // Should display: [1, 5)
 
-rl.add([1, 5]);
-rl.print();
-// Should display: [1, 5)
+  list.add([10, 20]);
+  list.print();
+  // Should display: [1, 5) [10, 20)
 
-rl.add([10, 20]);
-rl.print();
-// Should display: [1, 5) [10, 20)
+  list.add([20, 20]);
+  list.print();
+  // Should display: [1, 5) [10, 20)
 
-rl.add([20, 20]);
-rl.print();
-// Should display: [1, 5) [10, 20)
+  list.add([20, 21]);
+  list.print();
+  // Should display: [1, 5) [10, 21)
 
-rl.add([20, 21]);
-rl.print();
-// Should display: [1, 5) [10, 21)
+  list.add([2, 4]);
+  list.print();
+  // Should display: [1, 5) [10, 21)
 
-rl.add([2, 4]);
-rl.print();
-// Should display: [1, 5) [10, 21)
+  list.add([3, 8]);
+  list.print();
+  // Should display: [1, 8) [10, 21)
 
-rl.add([3, 8]);
-rl.print();
-// Should display: [1, 8) [10, 21)
+  list.remove([10, 10]);
+  list.print();
+  // Should display: [1, 8) [10, 21)
 
-rl.remove([10, 10]);
-rl.print();
-// Should display: [1, 8) [10, 21)
+  list.remove([10, 11]);
+  list.print();
+  // Should display: [1, 8) [11, 21)
 
-rl.remove([10, 11]);
-rl.print();
-// Should display: [1, 8) [11, 21)
+  list.remove([15, 17]);
+  list.print();
+  // Should display: [1, 8) [11, 15) [17, 21)
 
-rl.remove([15, 17]);
-rl.print();
-// Should display: [1, 8) [11, 15) [17, 21)
+  list.remove([3, 19]);
+  list.print();
+  // Should display: [1, 3) [19, 21)
+}
 
-rl.remove([3, 19]);
-rl.print();
-// Should display: [1, 3) [19, 21)
+// executeTest(new RangeList());
+// executeTest(new RangeListBitSetWithoutArray());
+executeTest(new RangeListPure());

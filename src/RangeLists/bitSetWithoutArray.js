@@ -39,13 +39,13 @@ export default class RangeListBitSetWithoutArray {
         rangeStartedAt = currentBitIdx;
       }
       if (!currentBitIsSet && prevBitIsSet) {
-        result += `[${rangeStartedAt}, ${currentBitIdx}) `;
+        result += `[${rangeStartedAt}, ${currentBitIdx})`;
       }
       prevBitIsSet = currentBitIsSet;
       currentBitIdx += 1;
     }
 
-    result += `[${rangeStartedAt}, ${currentBitIdx}) `;
+    result += `[${rangeStartedAt}, ${currentBitIdx})`;
 
     return result;
   }

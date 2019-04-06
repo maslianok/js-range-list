@@ -49,7 +49,7 @@ export default class RangeListPure {
         rangeStartedAt = i;
       }
       if (!currentBitIsSet && prevBitIsSet) {
-        result += `[${rangeStartedAt}, ${i}) `;
+        result += `[${rangeStartedAt}, ${i})`;
       }
       prevBitIsSet = currentBitIsSet;
     }
