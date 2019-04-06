@@ -1,6 +1,6 @@
 import BitSet from 'bitset';
 
-export default class RangeListUsingBitSet {
+export default class RangeList {
   constructor() {
     this.list = new BitSet();
   }
@@ -57,3 +57,5 @@ export default class RangeListUsingBitSet {
     console.log(`[${this.get().join(') [')})`);
   }
 }
+
+global.RangeList = RangeList;
