@@ -1,6 +1,6 @@
 import BitSet from 'bitset';
 
-export default class RangeList {
+export default class RangeListBitSet {
   constructor() {
     this.list = new BitSet();
   }
@@ -26,7 +26,7 @@ export default class RangeList {
    * @returns {Array.<Array.<number>>} result - Array of ranges
    */
   get() {
-    const result = [];
+    let result = '';
     const theMostSignificantBitIdx = this.list.msb();
     let currentBitIdx = this.list.lsb();
     let prevBitIsSet = true;
@@ -39,13 +39,13 @@ export default class RangeList {
         rangeStartedAt = currentBitIdx;
       }
       if (!currentBitIsSet && prevBitIsSet) {
-        result.push([rangeStartedAt, currentBitIdx]);
+        result += `[${rangeStartedAt}, ${currentBitIdx})`;
       }
       prevBitIsSet = currentBitIsSet;
       currentBitIdx += 1;
     }
 
-    result.push([rangeStartedAt, currentBitIdx]);
+    result += `[${rangeStartedAt}, ${currentBitIdx})`;
 
     return result;
   }
@@ -54,8 +54,8 @@ export default class RangeList {
    * Prints out the list of ranges in the range list
    */
   print() {
-    console.log(`[${this.get().join(') [')})`);
+    console.log(this.get());
   }
 }
 
-global.RangeList = RangeList;
+global.RangeListBitSet = RangeListBitSet;

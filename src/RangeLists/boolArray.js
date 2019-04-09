@@ -1,4 +1,4 @@
-export default class RangeListPure {
+export default class RangeListBoolArray {
   constructor() {
     this.list = [];
   }
@@ -65,4 +65,4 @@ export default class RangeListPure {
   }
 }
 
-global.RangeListPure = RangeListPure;
+global.RangeListBoolArray = RangeListBoolArray;

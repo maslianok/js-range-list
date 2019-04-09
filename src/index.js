@@ -1,5 +1,5 @@
-import RangeList from './RangeLists/bitSet';
-import RangeListBitSetWithoutArray from './RangeLists/bitSetWithoutArray';
-import RangeListPure from './RangeLists/pure';
+import RangeListBitSet from './RangeLists/bitSet';
+import RangeListBoolArray from './RangeLists/boolArray';
+import RangeListSortedArray from './RangeLists/sortedArray';
 
-export { RangeList, RangeListBitSetWithoutArray, RangeListPure };
+export { RangeListBitSet, RangeListBoolArray, RangeListSortedArray };

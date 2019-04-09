@@ -1,4 +1,4 @@
-import { RangeList, RangeListBitSetWithoutArray, RangeListPure } from 'js-range-list';
+import { RangeListBitSet, RangeListBoolArray, RangeListSortedArray } from 'js-range-list';
 
 function executeTest(list) {
   list.add([1, 5]);
@@ -42,6 +42,6 @@ function executeTest(list) {
   // Should display: [1, 3) [19, 21)
 }
 
-// executeTest(new RangeList());
-// executeTest(new RangeListBitSetWithoutArray());
-executeTest(new RangeListPure());
+// executeTest(new RangeListBitSet());
+// executeTest(new RangeListBoolArray());
+executeTest(new RangeListSortedArray());

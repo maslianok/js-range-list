@@ -1,8 +1,8 @@
-const { RangeListPure } = require('../src/index');
+const { RangeListSortedArray } = require('../src/index');
 
-const rl = new RangeListPure();
+const rl = new RangeListSortedArray();
 
-test('adds[1, 5]) Should display: [1, 5)', () => {
+test('add[1, 5]) Should display: [1, 5)', () => {
   rl.add([1, 5]);
   expect(rl.get()).toBe('[1, 5)');
 });
