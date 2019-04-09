@@ -1,6 +1,6 @@
-const { RangeListSortedArray } = require('../src/index');
+const { RangeListSortedRanges } = require('../src/index');
 
-const rl = new RangeListSortedArray();
+const rl = new RangeListSortedRanges();
 
 test('add[1, 5]) Should display: [1, 5)', () => {
   rl.add([1, 5]);
