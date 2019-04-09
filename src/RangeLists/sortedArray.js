@@ -27,6 +27,7 @@ export default class RangeListSortedArray {
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
    */
   add([startIdx, endIdx]) {
+    // this approach (slice + concat) is faster than `splice`
     this.list = [
       ...this.list.slice(0, this.sortedIndex(startIdx)),
       ...this.fillRange(startIdx, endIdx),
@@ -39,6 +40,7 @@ export default class RangeListSortedArray {
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
    */
   remove([startIdx, endIdx]) {
+    // this approach (slice + concat) is faster than `splice`
     this.list = [
       ...this.list.slice(0, this.sortedIndex(startIdx)),
       ...this.list.slice(this.sortedIndex(endIdx)),
